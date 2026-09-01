@@ -23,3 +23,10 @@
  */
 #undef VENDOR_ID
 #define VENDOR_ID 0x4F6D
+
+/*
+ * Allow VIA's "Test Matrix" to read raw switch state. Off by default in QMK
+ * because it exposes keypresses to the host; fine for a personal build, and
+ * needed here to map the thumb cluster to matrix positions.
+ */
+#define VIA_INSECURE
