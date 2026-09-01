@@ -26,11 +26,16 @@
 #pragma once
 // clang-format off
 
-#define QMK_KEYCODES_VERSION "0.0.9"
-#define QMK_KEYCODES_VERSION_BCD 0x00000009
+// LOCAL PATCH (branch yasha/ergodash-via): report keycodes v0.0.8 instead of
+// v0.0.9 so the current VIA app stops refusing the keycode picker. v0.0.9 only
+// *added* Plover HID stenography keycodes (0x5A40-0x5A7F, PR #26018), which this
+// build does not use, so advertising v0.0.8 is lossless here. Revert when VIA
+// ships 0x00000009 support.
+#define QMK_KEYCODES_VERSION "0.0.8"
+#define QMK_KEYCODES_VERSION_BCD 0x00000008
 #define QMK_KEYCODES_VERSION_MAJOR 0
 #define QMK_KEYCODES_VERSION_MINOR 0
-#define QMK_KEYCODES_VERSION_PATCH 9
+#define QMK_KEYCODES_VERSION_PATCH 8
 
 enum qk_keycode_ranges {
 // Ranges
